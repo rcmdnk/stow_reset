@@ -13,3 +13,7 @@ Command to reset stow directory, especially for the case in which the package in
           -n               Do not actually make any filesystem changes
           -h               Print Help (this message) and exit
     
+# References
+
+* [stowでmake installしたパッケージを管理](http://rcmdnk.github.io/blog/2013/08/11/computer-linux-windows-cygwin/)
+
