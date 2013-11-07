@@ -17,3 +17,7 @@ Command to reset stow directory, especially for the case in which the package in
 
 * [stowでmake installしたパッケージを管理](http://rcmdnk.github.io/blog/2013/08/11/computer-linux-windows-cygwin/)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/stowreset/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
