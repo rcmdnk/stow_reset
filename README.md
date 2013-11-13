@@ -1,11 +1,11 @@
-stowReset
+stow_reset
 =========
 
 Command to reset stow directory, especially for the case in which the package installs symbolic links.
 
 # Usage
 
-    stowReset [-nh] [-d <stow dir>] [-t <target dir>] package
+    stow_reset [-nh] [-d <stow dir>] [-t <target dir>] package
     
     Arguments:
           -d <stow dir>    Set stow dir to DIR (default is current dir)
