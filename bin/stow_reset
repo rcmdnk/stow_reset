@@ -98,7 +98,7 @@ fi
 
 # Remove files/directories
 while read f;do
-  if [ -f "$targetdir"/"$f" ];then
+  if [ -f "$targetdir"/"$f" -o -L "$targetdir"/"$f" ];then
     echo rm -f "$targetdir"/"$f"
     rm -f "$targetdir"/"$f"
   elif [ -d "$f" ];then
