@@ -38,7 +38,7 @@ package=""
 stowdir="."
 targetdir=".."
 simulation=0
-curdir=`pwd`
+curdir=$(pwd)
 
 # Help
 HELP="Usage: $0 [-nh] [-d <stow dir>] [-t <target dir>] package
@@ -52,17 +52,17 @@ Arguments:
 # Get Options
 OPTNUM=0
 while getopts d:t:nvh OPT;do
-  OPTNUM=`expr $OPTNUM + 1`
+  ((OPTNUM++))
   case $OPT in
     "d" ) stowdir="$OPTARG" ;;
     "t" ) targetdir="$OPTARG" ;;
     "n" ) simulation=1 ;;
-    "v" ) echo "$(basename $0) $SENTAKU_VERSION $SENTAKU_DATE" >&2; exit 0;;
+    "v" ) echo "$(basename "$0") $STOW_RESET_VERSION $STOW_RESET_DATE" >&2; exit 0;;
     "h" ) echo "$HELP" >&2 ; exit 0;;
     * ) echo "$HELP" >&2 ; exit 1;;
   esac
 done
-shift $(($OPTIND - 1))
+shift $((OPTIND - 1))
 
 # Get package name
 package=${1%/}
@@ -77,22 +77,12 @@ echo "########################"
 echo
 
 # Check first directories
-fdirs=`ls "$stowdir"/"$package"/`
-
-if type tac >/dev/null 2>&1;then
-  revlines="tac"
-elif ! tail --version 2>/dev/null |grep -q GNU;then
-  revlines="tail -r"
-else
-  echo Neither tac nor BSD tail was found.
-  echo You may need to run $0 again to remove directories.
-  revlines="cat"
-fi
+fdirs=$(ls "$stowdir"/"$package"/)
 
 # Make file/directory list
 rm -f "$flist"
 cd "$stowdir"/"$package"
-for d in ${fdirs[@]};do
+for d in "${fdirs[@]}";do
   find "$d" >> "$flist"
 done
 cd "$curdir"
