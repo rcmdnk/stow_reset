@@ -3,7 +3,7 @@ stow_reset
 
 Command to reset stow directory, especially for the case in which the package installs symbolic links.
 
-# Installation
+## Installation
 
 On Mac, you can install scripts by [Homebrew](https://github.com/mxcl/homebrew):
 
@@ -38,7 +38,7 @@ If you want to install other directory, do like:
     $ curl -fsSL https://raw.github.com/rcmdnk/stow_reset/install/install.sh|  prefix=~/usr/local/ sh
 
 Or, simply download scripts and set where you like.
-# Usage
+## Usage
 
     stow_reset [-nh] [-d <stow dir>] [-t <target dir>] package
     
@@ -48,6 +48,6 @@ Or, simply download scripts and set where you like.
           -n               Do not actually make any filesystem changes
           -h               Print Help (this message) and exit
     
-# References
+## References
 
 * [stowでmake installしたパッケージを管理](http://rcmdnk.github.io/blog/2013/08/11/computer-linux-windows-cygwin/)
